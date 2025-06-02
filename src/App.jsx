@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import initialData from "./data/data.json";
 import styles from "./App.module.css";
 import TopBar from "./components/TopBar";
@@ -6,9 +6,28 @@ import Header from "./components/Hearder.jsx";
 import ExtensionCard from "./components/ExtensionCard";
 
 function App() {
-  const [extensions, setExtensions] = useState(initialData);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
+  const [extensions, setExtensions] = useState(() => {
+    const stored = localStorage.getItem("extensions");
+    return stored ? JSON.parse(stored) : initialData;
+  });
+
   const [filter, setFilter] = useState("All");
-  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    localStorage.setItem("extensions", JSON.stringify(extensions));
+  }, [extensions]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const newTheme = prev === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
+  };
 
   const toggleActive = (name) => {
     setExtensions((exts) =>
@@ -20,10 +39,6 @@ function App() {
 
   const removeExtension = (name) => {
     setExtensions((exts) => exts.filter((ext) => ext.name !== name));
-  };
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   const filtered = extensions.filter((ext) => {
