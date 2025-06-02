@@ -1,0 +1,67 @@
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: #1e1f2b;
+  color: #f4f4f4;
+}
+
+.light .card {
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.description {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.remove {
+  background: none;
+  border: 1px solid;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.card.dark {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.card.light {
+  background-color: #ffffff;
+  color: #000;
+}

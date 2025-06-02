@@ -1,0 +1,26 @@
+.switch {
+  width: 36px;
+  height: 18px;
+  background-color: #555;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: background-color 0.3s;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.active {
+  background-color: #ef4444;
+}
+
+.active .circle {
+  transform: translateX(18px);
+}

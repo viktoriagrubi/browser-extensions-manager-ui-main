@@ -1,0 +1,56 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1f2b;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  transition: background-color 0.3s;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon2 {
+  width: 24px;
+  height: 24px;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.toggle:hover .icon2 {
+  filter: brightness(1.2);
+}
+
+.topbar.dark {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.topbar.light {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.75rem 1rem;
+    gap: 1rem;
+  }
+}
+
+.light .topbar {
+  background-color: white;
+}

@@ -1,0 +1,70 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 1rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.light {
+  background: linear-gradient(to bottom, #e9f1fb, #fdfdfd);
+  color: #1e1e1e;
+}
+
+.light .card {
+  background-color: white !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #1e1e1e;
+}
+
+.light .remove {
+  border-color: #ccc;
+  color: #333;
+}
+
+.light .remove:hover {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.light .switch {
+  background-color: #ccc;
+}
+
+.light .active .circle {
+  background-color: white;
+}
+
+.light .active.switch {
+  background-color: #ef4444;
+}
